@@ -1,0 +1,7 @@
+{
+  "name": "featured-products",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
