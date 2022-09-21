@@ -46,6 +46,7 @@
     "typescript": "~4.8.2"
   },
   "dependencies": {
+    "@angular-architects/module-federation": "~14.3.10",
     "@angular/animations": "~14.2.0",
     "@angular/common": "~14.2.0",
     "@angular/compiler": "~14.2.0",
