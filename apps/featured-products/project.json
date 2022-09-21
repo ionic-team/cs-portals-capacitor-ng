@@ -5,8 +5,10 @@
   "prefix": "portals-ecommerce",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/featured-products",
         "index": "apps/featured-products/src/index.html",
@@ -28,7 +30,11 @@
             "input": "apps/featured-products/src/theme/variables.scss"
           }
         ],
-        "scripts": []
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/featured-products/webpack.config.js"
+        },
+        "commonChunk": false
       },
       "configurations": {
         "production": {
@@ -50,7 +56,10 @@
               "with": "apps/featured-products/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/featured-products/webpack.prod.config.js"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -64,7 +73,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
           "browserTarget": "featured-products:build:production"
@@ -73,12 +82,17 @@
           "browserTarget": "featured-products:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201"
+      }
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "featured-products:build"
+        "browserTarget": "featured-products:build",
+        "extraWebpackConfig": "apps/featured-products/webpack.config.js"
       }
     },
     "lint": {
@@ -92,7 +106,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/featured-products"],
+      "outputs": [
+        "coverage/apps/featured-products"
+      ],
       "options": {
         "jestConfig": "apps/featured-products/jest.config.ts",
         "passWithNoTests": true
