@@ -1,0 +1,6 @@
+{
+  "name": "account",
+  "devDependencies": {
+    "@capacitor/cli": "^3.6.0"
+  }
+}
