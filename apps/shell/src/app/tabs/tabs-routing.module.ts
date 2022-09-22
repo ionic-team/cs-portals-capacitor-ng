@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: 'cart',
         loadChildren: () =>
-          import('../tab2/tab2.module').then((m) => m.Tab2PageModule),
+          import('../shop/shop.module').then((m) => m.ShopPageModule),
       },
       {
         path: 'user',

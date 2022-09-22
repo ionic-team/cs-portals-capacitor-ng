@@ -7,10 +7,13 @@ const routes: Routes = [
     path: '',
     component: ShopPage,
   },
-  // {
-  //   path: 'tea-details',
-  //   loadChildren: () => import('../tea-details/tea-details.module').then((m) => m.TeaDetailsPageModule),
-  // },
+  {
+    path: 'item',
+    loadChildren: () =>
+      import('../item-detail/item-detail.module').then(
+        (m) => m.ItemDetailPageModule
+      ),
+  },
 ];
 
 @NgModule({
