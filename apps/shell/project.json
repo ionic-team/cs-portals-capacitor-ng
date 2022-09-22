@@ -1,21 +1,21 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/host/src",
+  "sourceRoot": "apps/shell/src",
   "prefix": "portals-ecommerce",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/host",
-        "index": "apps/host/src/index.html",
-        "main": "apps/host/src/main.ts",
-        "polyfills": "apps/host/src/polyfills.ts",
-        "tsConfig": "apps/host/tsconfig.app.json",
+        "outputPath": "dist/apps/shell",
+        "index": "apps/shell/src/index.html",
+        "main": "apps/shell/src/main.ts",
+        "polyfills": "apps/shell/src/polyfills.ts",
+        "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/host/src/assets",
+          "apps/shell/src/assets",
           {
             "glob": "**/*.svg",
             "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -23,9 +23,9 @@
           }
         ],
         "styles": [
-          "apps/host/src/styles.scss",
+          "apps/shell/src/styles.scss",
           {
-            "input": "apps/host/src/theme/variables.scss"
+            "input": "apps/shell/src/theme/variables.scss"
           }
         ],
         "scripts": []
@@ -46,8 +46,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/host/src/environments/environment.ts",
-              "with": "apps/host/src/environments/environment.prod.ts"
+              "replace": "apps/shell/src/environments/environment.ts",
+              "with": "apps/shell/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -67,10 +67,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "host:build:production"
+          "browserTarget": "shell:build:production"
         },
         "development": {
-          "browserTarget": "host:build:development"
+          "browserTarget": "shell:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -78,20 +78,20 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "host:build"
+        "browserTarget": "shell:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/host/**/*.ts", "apps/host/**/*.html"]
+        "lintFilePatterns": ["apps/shell/**/*.ts", "apps/shell/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/host"],
+      "outputs": ["coverage/apps/shell"],
       "options": {
-        "jestConfig": "apps/host/jest.config.ts",
+        "jestConfig": "apps/shell/jest.config.ts",
         "passWithNoTests": true
       }
     },

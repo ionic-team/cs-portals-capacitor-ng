@@ -38,5 +38,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "host"
+  "defaultProject": "shell"
 }
