@@ -4,6 +4,7 @@
   "projects": {
     "account": "apps/account",
     "help": "apps/help",
+    "shared": "libs/shared",
     "shell": "apps/shell"
   }
 }
