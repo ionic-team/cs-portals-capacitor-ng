@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductService } from '@portals-ecommerce/shared';
+import { ProductService, Product } from '@portals-ecommerce/shared';
 
 @Component({
   selector: 'portals-ecommerce-shop',
@@ -7,7 +7,11 @@ import { ProductService } from '@portals-ecommerce/shared';
   styleUrls: ['shop.page.scss'],
 })
 export class ShopPage {
+  featuredProducts: Product[] = [];
+  products: Product[] = [];
+
   constructor(private product: ProductService) {
-    console.log(this.product.user);
+    this.products = this.product.getProducts();
+    this.featuredProducts = this.product.getFeaturedProducts();
   }
 }
