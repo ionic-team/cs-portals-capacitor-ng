@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "account": "apps/account",
+    "help": "apps/help",
     "shell": "apps/shell"
   }
 }
