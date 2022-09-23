@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { ProductService, Product } from '@portals-ecommerce/shared';
 
 @Component({
   selector: 'portals-ecommerce-item-detail',
@@ -7,17 +9,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['item-detail.page.scss'],
 })
 export class ItemDetailPage implements OnInit {
-  product = {
-    id: 1,
-    title: 'Capacitor Snapback',
-    price: 32,
-    description: 'lorem ipsum',
-  };
-  id = -1;
+  product$: Observable<Product | undefined> = of(undefined);
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private product: ProductService) {}
 
   ngOnInit() {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id') || '0', 10);
+    const id = parseInt(this.route.snapshot.paramMap.get('id') || '0', 10);
+    this.product$ = this.product.getProductById(id);
+  }
+
+  addToCart(product: Product) {
+    console.log(product);
   }
 }

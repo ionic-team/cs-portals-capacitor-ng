@@ -10,4 +10,12 @@
       <ion-title size="large">Shop</ion-title>
     </ion-toolbar>
   </ion-header>
+  <h2 class="ion-padding">Must Haves, Bestsellers & More</h2>
+  <ion-card *ngFor="let product of featuredProducts" button [routerLink]="['item', product.id]">
+    <div>{{product.title}}</div>
+  </ion-card>   
+  <h2 class="ion-padding">Products</h2>
+  <ion-card *ngFor="let product of products" button [routerLink]="['item', product.id]">
+    <div>{{product.title}}</div>
+  </ion-card>   
 </ion-content>
