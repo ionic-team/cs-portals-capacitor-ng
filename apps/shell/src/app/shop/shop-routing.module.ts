@@ -14,6 +14,10 @@ const routes: Routes = [
         (m) => m.ItemDetailPageModule
       ),
   },
+  {
+    path: 'help',
+    loadChildren: () => import('help/Module').then((m) => m.HelpPageModule),
+  },
 ];
 
 @NgModule({
