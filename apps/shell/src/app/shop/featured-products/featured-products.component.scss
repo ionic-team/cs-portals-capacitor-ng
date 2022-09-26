@@ -1,0 +1,21 @@
+.featured-products {
+  overflow-x: auto;
+  &::-webkit-scrollbar { display: none; }
+  &-inner {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  ion-card {
+    box-shadow: none;
+    min-width: 245px;
+    margin-right: .25em;
+    --background: none;
+    img { border-radius: 16px;}
+    ion-card-title, ion-card-subtitle {
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+  }
+}

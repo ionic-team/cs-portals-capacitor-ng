@@ -1,0 +1,9 @@
+ <div class="featured-products">
+  <div class="featured-products-inner">
+    <ion-card *ngFor="let product of products" button [routerLink]="['item', product.id]">
+      <img [alt]="product.title" decoding="async" src="../../assets/images/{{product.image}}" />
+      <ion-card-title>{{product.title}}</ion-card-title>
+      <ion-card-subtitle>{{product.price | currency}}</ion-card-subtitle>
+    </ion-card>  
+  </div>
+</div>

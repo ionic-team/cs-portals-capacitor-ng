@@ -1,0 +1,13 @@
+ion-card {
+  margin: 0;
+  box-shadow: none;
+  --background: none;
+  img {
+    border-radius: 16px;
+  }
+  ion-card-title, ion-card-subtitle {
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}

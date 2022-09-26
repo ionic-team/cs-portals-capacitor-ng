@@ -1,0 +1,15 @@
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
