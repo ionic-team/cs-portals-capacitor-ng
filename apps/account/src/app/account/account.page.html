@@ -12,16 +12,14 @@
   </ion-header>
 
   <div id="container">
-    <h1>Welcome account!</h1>
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
+    <p *ngIf="user$ | async as user">
+     <portals-ecommerce-address-item 
+      *ngFor="let address of user.addresses"
+      [user]="user"
+      [address]="address"
+      (selectAddress)="onAddressSelected($event)"
+      [selectable]="true"
+     ></portals-ecommerce-address-item>
     </p>
   </div>
 </ion-content>
