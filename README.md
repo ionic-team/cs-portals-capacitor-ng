@@ -20,3 +20,4 @@ Portals for Capacitor complements existing micro frontend tools, with the follow
    5. Revert `tsconfig.base.json` and any `tsconfig.app.json` files. Not sure why the plugin modifies these.
 2. Document the need to create a `definitions.d.ts` file.
 3. How to kill ports node doesn't: `kill -9 $(lsof -ti:4200,4201)`.
+4. Remotes can't start with "name@" think it's a plugin limitation...

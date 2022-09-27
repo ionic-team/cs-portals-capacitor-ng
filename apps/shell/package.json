@@ -1,5 +1,8 @@
 {
   "name": "@portals-ecommerce/shell",
+  "dependencies": {
+    "@ionic-enterprise/capacitor-portals": "~0.0.2"
+  },
   "devDependencies": {
     "@capacitor/cli": "^3.6.0"
   }

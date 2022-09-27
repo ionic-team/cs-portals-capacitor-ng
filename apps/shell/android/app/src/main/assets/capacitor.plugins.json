@@ -1,0 +1,6 @@
+[
+	{
+		"pkg": "@ionic-enterprise/capacitor-portals",
+		"classpath": "com.capacitorjs.portals.PortalsPlugin"
+	}
+]
