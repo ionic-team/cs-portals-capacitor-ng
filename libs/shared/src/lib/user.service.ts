@@ -10,4 +10,8 @@ export class UserService {
   getCurrentUser() {
     return this.user.asObservable();
   }
+
+  updateCurrentUser(update: Partial<User>) {
+    this.user.next({ ...this.user.getValue(), ...update });
+  }
 }

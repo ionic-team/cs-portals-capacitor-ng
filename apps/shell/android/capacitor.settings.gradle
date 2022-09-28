@@ -4,3 +4,6 @@ project(':capacitor-android').projectDir = new File('../../../node_modules/@capa
 
 include ':ionic-enterprise-capacitor-portals'
 project(':ionic-enterprise-capacitor-portals').projectDir = new File('../../../node_modules/@ionic-enterprise/capacitor-portals/android')
+
+include ':capacitor-camera'
+project(':capacitor-camera').projectDir = new File('../../../node_modules/@capacitor/camera/android')

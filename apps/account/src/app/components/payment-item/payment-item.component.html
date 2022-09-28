@@ -1,0 +1,10 @@
+<ion-item button detail="false" (click)="onPaymentSelected()">
+  <ion-checkbox slot="start" *ngIf="selectable" [checked]="creditCard.id === selectedId"></ion-checkbox>
+  <ion-label class="ion-text-wrap">
+    {{creditCard.company}} ending in {{creditCard.number.slice(-4)}}
+  </ion-label>
+  <ion-chip *ngIf="creditCard.preferred" color="success">Default</ion-chip>
+  <ion-button fill="clear" slot="end" [routerLink]="['/card/', creditCard.id]">
+    Edit
+  </ion-button>
+</ion-item>

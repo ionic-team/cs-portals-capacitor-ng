@@ -1,6 +1,6 @@
 {
   "name": "help",
   "devDependencies": {
-    "@capacitor/cli": "^3.6.0"
+    "@capacitor/cli": "^4.3.0"
   }
 }

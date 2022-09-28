@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="user$ | async as user">
+    <div class="user-image">
+      <img src="../../assets/images/{{user.image}}" alt="{{user.firstName}} {{user.lastName}}">
+      <ion-icon name="add"></ion-icon>
+    </div>
+    <div class="user-info">
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label position="fixed" text-wrap>First Name</ion-label>
+          <ion-input [value]="user.firstName" (ionChange)="updateFirstName($event)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed" text-wrap>Last Name</ion-label>
+          <ion-input [value]="user.lastName" (ionChange)="updateLastName($event)"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed" text-wrap>Email Address</ion-label>
+          <ion-input [value]="user.email" (ionChange)="updateEmailAddress($event)"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="list-section">
+      <h4>Addresses</h4>
+      <ion-list lines="none">
+        <portals-ecommerce-address-item 
+          *ngFor="let address of user.addresses"
+          [user]="user"
+          [address]="address"
+          [selectable]="false"
+        ></portals-ecommerce-address-item>
+      </ion-list>
+      <ion-button expand="block" color="secondary" [routerLink]="['/address']">
+        New Address
+      </ion-button>
+    </div>
+    <div class="list-section">
+      <h4>Payment Methods</h4>
+      <ion-list lines="none">
+        <portals-ecommerce-payment-item
+        *ngFor="let card of user.creditCards"
+        [creditCard]="card"
+        [selectable]="false"
+      ></portals-ecommerce-payment-item>
+        <ion-button expand="block" color="secondary" [routerLink]="['/payment']">
+          New Payment Method
+        </ion-button>
+      </ion-list>
+    </div>
+  </ng-container>
+</ion-content>
