@@ -9,6 +9,11 @@ const routes: Routes = [
         (m) => m.UserDetailPageModule
       ),
   },
+  {
+    path: 'address',
+    loadChildren: () =>
+      import('./address/address.module').then((m) => m.AddressPageModule),
+  },
 ];
 
 @NgModule({
