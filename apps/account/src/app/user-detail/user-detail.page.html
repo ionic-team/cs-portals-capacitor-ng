@@ -6,8 +6,8 @@
 
 <ion-content>
   <ng-container *ngIf="user$ | async as user">
-    <div class="user-image">
-      <img src="../../assets/images/{{user.image}}" alt="{{user.firstName}} {{user.lastName}}">
+    <div class="user-image" (click)="takePicture()">
+      <img [src]="user.image" alt="{{user.firstName}} {{user.lastName}}">
       <ion-icon name="add"></ion-icon>
     </div>
     <div class="user-info">

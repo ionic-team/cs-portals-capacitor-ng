@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Camera, CameraDirection, CameraResultType } from '@capacitor/camera';
 import { UserService, User } from '@portals-ecommerce/shared';
 import { Observable } from 'rxjs';
 
@@ -24,5 +25,16 @@ export class UserDetailPage {
 
   updateEmailAddress(e: any) {
     this.user.updateCurrentUser({ email: e.detail.value });
+  }
+
+  async takePicture() {
+    const { format, base64String } = await Camera.getPhoto({
+      quality: 100,
+      width: 300,
+      direction: CameraDirection.Front,
+      resultType: CameraResultType.Base64,
+    });
+    const image = `data:image/${format};base64,${base64String}`;
+    this.user.updateCurrentUser({ image });
   }
 }
