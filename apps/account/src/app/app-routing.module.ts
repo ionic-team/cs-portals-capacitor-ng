@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./address/address.module').then((m) => m.AddressPageModule),
   },
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('./payment/payment.module').then((m) => m.PaymentPageModule),
+  },
 ];
 
 @NgModule({

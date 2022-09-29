@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PickerController } from '@ionic/angular';
+import { NavController, PickerController } from '@ionic/angular';
 import { StateCodes, User, UserService } from '@portals-ecommerce/shared';
 import { Observable } from 'rxjs';
 
@@ -23,7 +23,7 @@ export class AddressPage implements OnInit {
     private route: ActivatedRoute,
     private user: UserService,
     private pickerCtrl: PickerController,
-    private router: Router
+    private nav: NavController
   ) {
     this.user$ = this.user.getCurrentUser();
   }
@@ -66,6 +66,6 @@ export class AddressPage implements OnInit {
   saveAddress() {
     const { id, street, city, state, postal, preferred } = this;
     this.user.saveAddress({ id, street, city, state, postal, preferred });
-    this.router.navigate(['/user']);
+    this.nav.back();
   }
 }

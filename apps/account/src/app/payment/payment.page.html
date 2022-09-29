@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{id === -1 ? 'Add' : 'Edit'}} Payment</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cancel"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="id > 0">
+   <ion-item lines="none">
+    <ion-text slot="start">Visa</ion-text>
+   </ion-item>
+   <ion-item lines="none">
+    <ion-text slot="start">Card last 4 digits</ion-text>
+    <ion-text slot="end">{{number.slice(-4)}}</ion-text>
+   </ion-item>
+   <ion-item lines="none">
+    <ion-label slot="start">Card exp. date</ion-label>
+    <ion-text slot="end">{{expirationDate | date:'MM/yyyy'}}</ion-text>
+   </ion-item>
+  </ng-container>
+  <ion-item lines="none">
+    <ion-label position="stacked">Card Number</ion-label>
+    <ion-input type="text" pattern="[0-9]" maxlength="16" [(ngModel)]="number"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-grid class="ion-no-padding ion-padding-vertical">
+      <ion-row>
+        <ion-col size="9">
+          <ion-label position="stacked">Exp. Date</ion-label>
+          <ion-input id="exp-date" [value]="expirationDate | date:'MM/yyyy'"></ion-input>
+          <ion-modal trigger="exp-date" [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime 
+                [min]="today"
+                max="2040"
+                id="datetime"
+                presentation="month-year"
+                showDefaultButtons="true"
+                [(ngModel)]="expirationDate"
+              ></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-col>
+        <ion-col>
+          <ion-label position="stacked">CVV</ion-label>
+          <ion-input type="text" placeholder="XXX" pattern="[0-9]" maxlength="3" [(ngModel)]="cvv"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label position="fixed">Zip Code</ion-label>
+    <ion-input [(ngModel)]="zip" type="number" pattern="[0-9]*"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox [(ngModel)]="preferred" [checked]="preferred"></ion-checkbox>
+    <ion-text>Set as default payment method</ion-text>
+  </ion-item>
+  <ion-button (click)="savePaymentMethod()" expand="block">Save</ion-button>
+</ion-content>

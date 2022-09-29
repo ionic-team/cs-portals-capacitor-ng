@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Address, User } from './models';
+import { Address, CreditCard, User } from './models';
 import UserJson from '../../assets/data.json';
 
 @Injectable({ providedIn: 'root' })
@@ -15,8 +15,12 @@ export class UserService {
     this.user.next({ ...this.user.getValue(), ...update });
   }
 
-  getAddressById(id?: number): Address | undefined {
+  getAddressById(id: number): Address | undefined {
     return this.user.getValue().addresses.find((a) => a.id === id);
+  }
+
+  getPaymentMethodById(id: number): CreditCard | undefined {
+    return this.user.getValue().creditCards.find((c) => c.id === id);
   }
 
   saveAddress(address: Address) {
@@ -33,5 +37,21 @@ export class UserService {
     }
 
     this.user.next({ ...this.user.getValue(), addresses });
+  }
+
+  savePaymentMethod(card: CreditCard) {
+    const creditCards = this.user.getValue().creditCards;
+    let idx = creditCards.findIndex((c) => c.id === card.id);
+
+    if (card.preferred) creditCards.map((c) => (c.preferred = false));
+
+    if (idx > -1) {
+      creditCards.splice(idx, 1, card);
+    } else {
+      idx = Math.max(...(creditCards.map((c) => c.id) || 0)) + 1;
+      creditCards.push({ ...card, id: idx });
+    }
+
+    this.user.next({ ...this.user.getValue(), creditCards });
   }
 }
