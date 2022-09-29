@@ -126,7 +126,7 @@
     "firstName": "Josh",
     "lastName": "Thomas",
     "email": "josh@ionic.io",
-    "image": "jt-avatar.png",
+    "image": "../../assets/images/jt-avatar.png",
     "addresses": [
       {
         "id": 1,

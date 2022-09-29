@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{id === -1 ? 'Add' : 'Edit'}} Address</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cancel"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="user$ | async as user">
+    <ion-item lines="full">
+      <ion-label position="fixed">Full Name</ion-label>
+      <ion-input disabled value="{{user.firstName}} {{user.lastName}}"></ion-input>
+    </ion-item>
+  </ng-container>
+  <ion-item lines="full">
+    <ion-label position="fixed">Address</ion-label>
+    <ion-input [(ngModel)]="street"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="fixed">Zip Code</ion-label>
+    <ion-input [(ngModel)]="postal" type="number" pattern="[0-9]*"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="fixed">City</ion-label>
+    <ion-input [(ngModel)]="city"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="fixed">State</ion-label>
+    <ion-input [(ngModel)]="state" (click)="openStateCodePicker()"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-checkbox [(ngModel)]="preferred" [checked]="preferred"></ion-checkbox>
+    <ion-text>Set as default address</ion-text>
+  </ion-item>
+  <ion-button (click)="saveAddress()" expand="block">Save</ion-button>
+</ion-content>
