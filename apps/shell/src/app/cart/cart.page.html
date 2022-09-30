@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cart</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ng-container *ngIf="cart$ | async as cart">
+    <div *ngIf="cart.basket.length; else basketEmpty">
+      <ion-list class="ion-padding-vertical">
+        <portals-ecommerce-cart-list-item 
+          *ngFor="let item of cart.basket"
+          [id]="item.productId" 
+          [quantity]="item.quantity"
+        ></portals-ecommerce-cart-list-item>
+      </ion-list>
+      <hr>
+      <div class="ion-padding-horizontal">
+        <table class="totals">
+          <tr>
+            <th>Subtotal</th>
+            <td>{{cart.subTotal | currency}}</td>
+          </tr>
+          <tr>
+            <th>Shipping</th>
+            <td>Standard - Free</td>
+          </tr>
+          <tr>
+            <th><strong>Estimated Total</strong></th>
+            <td><strong>{{cart.subTotal | currency}} + Tax</strong></td>
+          </tr>
+        </table>
+        <ion-button expand="block">Checkout</ion-button>
+      </div>
+    </div>
+    <ng-template #basketEmpty>
+      <div class="center-container">
+        <h1>Your cart is empty</h1>
+        <ion-button [routerLink]="['/shop']">Go Shop!</ion-button>
+      </div>
+    </ng-template>
+  </ng-container>
+</ion-content>

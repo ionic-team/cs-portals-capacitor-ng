@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '@portals-ecommerce/shared';
 
 @Component({
   selector: 'portals-ecommerce-tabs',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss'],
 })
 export class TabsPage {
-  constructor() {}
+  basketCount = 0;
+
+  constructor(private cart: CartService) {
+    this.cart.getCurrentCart().subscribe((c) => {
+      this.basketCount = 0;
+      c.basket.forEach(({ quantity }) => (this.basketCount += quantity));
+    });
+  }
 }

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/shop"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{(product$ | async)?.title}}</ion-title>
+    <ion-title>{{product?.title}}</ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/shop/help">
         <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="(product$ | async) as product; else productNotFound">
+  <div *ngIf="product; else productNotFound">
     <img src="../../assets/images/{{product.image}}" />
     <div class="ion-padding">
       <h1>{{product.title}}</h1>

@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { ProductService, Product } from '@portals-ecommerce/shared';
+import {
+  ProductService,
+  Product,
+  CartService,
+} from '@portals-ecommerce/shared';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'portals-ecommerce-item-detail',
@@ -9,16 +14,22 @@ import { ProductService, Product } from '@portals-ecommerce/shared';
   styleUrls: ['item-detail.page.scss'],
 })
 export class ItemDetailPage implements OnInit {
-  product$: Observable<Product | undefined> = of(undefined);
+  product?: Product = undefined;
 
-  constructor(private route: ActivatedRoute, private product: ProductService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productSvc: ProductService,
+    private cart: CartService,
+    private nav: NavController
+  ) {}
 
   ngOnInit() {
     const id = parseInt(this.route.snapshot.paramMap.get('id') || '0', 10);
-    this.product$ = this.product.getProductById(id);
+    this.product = this.productSvc.getProductById(id);
   }
 
   addToCart(product: Product) {
-    console.log(product);
+    this.cart.addToBasket(product.id, product.price);
+    this.nav.back();
   }
 }

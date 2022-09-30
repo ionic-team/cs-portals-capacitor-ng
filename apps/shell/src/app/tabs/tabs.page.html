@@ -5,6 +5,7 @@
     </ion-tab-button>
 
     <ion-tab-button tab="cart">
+      <ion-badge color="warning" *ngIf="basketCount > 0">{{basketCount}}</ion-badge>
       <ion-icon name="basket-outline"></ion-icon>
     </ion-tab-button>
 

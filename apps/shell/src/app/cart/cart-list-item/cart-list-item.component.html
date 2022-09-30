@@ -1,0 +1,20 @@
+<ion-item *ngIf="product" lines="none">
+  <div class="cart-item">
+    <img src="../../assets/images/{{product.image}}" />
+    <div class="cart-item-detail">
+      <h4>{{product.title}}</h4>
+      <div class="cart-item-detail-quantity">
+          Qty:
+          <ion-button fill="clear" size="small" [disabled]="quantity < 1" (click)="removeQuantity()">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          {{quantity}}
+          <ion-button fill="clear" size="small" [disabled]="quantity > 8" (click)="addQuantity()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+        <ion-text class="price">${{product.price}}</ion-text>
+      </div>
+    </div>
+  </div>
+
+</ion-item>

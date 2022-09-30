@@ -1,0 +1,31 @@
+ion-item {
+  padding-bottom: 1em;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  img {
+    border-radius: 12px;
+  }
+  &-detail {
+    padding: 0 1em;
+    h4 { margin: 0; padding: 0; line-height: 1.5;}
+    &-quantity {
+      font-size: 85%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      ion-button {
+        --color: var(--ion-text-color);
+        --padding-start: .5em;
+        --padding-end: .5em;
+      }
+      .price {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
+}

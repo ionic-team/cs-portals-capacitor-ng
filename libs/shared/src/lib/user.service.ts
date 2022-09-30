@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Address, CreditCard, User } from './models';
-import UserJson from '../../assets/data.json';
+import DataJson from '../../assets/data.json';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private user = new BehaviorSubject(UserJson.user as User);
+  private user = new BehaviorSubject(DataJson.user as User);
 
   getCurrentUser(): Observable<User> {
     return this.user.asObservable();
