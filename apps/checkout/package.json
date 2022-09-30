@@ -1,0 +1,6 @@
+{
+  "name": "checkout",
+  "devDependencies": {
+    "@capacitor/cli": "^4.3.0"
+  }
+}

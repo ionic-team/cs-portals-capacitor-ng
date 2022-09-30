@@ -148,5 +148,15 @@
         "zip": "53717"
       }
     ]
+  },
+  "cart": {
+    "id": -1,
+    "subTotal": 64.0,
+    "basket": [
+      {
+        "productId": 1,
+        "quantity": 2
+      }
+    ]
   }
 }
