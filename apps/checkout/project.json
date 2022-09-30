@@ -5,8 +5,10 @@
   "prefix": "portals-ecommerce",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/checkout",
         "index": "apps/checkout/src/index.html",
@@ -28,7 +30,11 @@
             "input": "apps/checkout/src/theme/variables.scss"
           }
         ],
-        "scripts": []
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/checkout/webpack.config.js"
+        },
+        "commonChunk": false
       },
       "configurations": {
         "production": {
@@ -50,7 +56,10 @@
               "with": "apps/checkout/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/checkout/webpack.prod.config.js"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -64,7 +73,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
           "browserTarget": "checkout:build:production"
@@ -73,23 +82,33 @@
           "browserTarget": "checkout:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4203,
+        "publicHost": "http://localhost:4203"
+      }
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "checkout:build"
+        "browserTarget": "checkout:build",
+        "extraWebpackConfig": "apps/checkout/webpack.config.js"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/checkout/**/*.ts", "apps/checkout/**/*.html"]
+        "lintFilePatterns": [
+          "apps/checkout/**/*.ts",
+          "apps/checkout/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/checkout"],
+      "outputs": [
+        "coverage/apps/checkout"
+      ],
       "options": {
         "jestConfig": "apps/checkout/jest.config.ts",
         "passWithNoTests": true
