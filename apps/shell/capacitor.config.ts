@@ -17,6 +17,10 @@ const config: CapacitorConfig = {
           webDir: '../../dist/apps/account',
         },
         {
+          name: 'checkout',
+          webDir: '../../dist/apps/checkout',
+        },
+        {
           name: 'help',
           webDir: '../../dist/apps/help',
         },

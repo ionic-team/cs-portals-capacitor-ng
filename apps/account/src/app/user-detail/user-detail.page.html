@@ -29,12 +29,12 @@
     <div class="list-section">
       <h4>Addresses</h4>
       <ion-list lines="none">
-        <portals-ecommerce-address-item 
+        <portals-ecommerce-address
           *ngFor="let address of user.addresses"
           [user]="user"
           [address]="address"
           [selectable]="false"
-        ></portals-ecommerce-address-item>
+        ></portals-ecommerce-address>
       </ion-list>
       <ion-button expand="block" color="secondary" [routerLink]="['./address']">
         New Address
@@ -43,11 +43,11 @@
     <div class="list-section">
       <h4>Payment Methods</h4>
       <ion-list lines="none">
-        <portals-ecommerce-payment-item
-        *ngFor="let card of user.creditCards"
-        [creditCard]="card"
-        [selectable]="false"
-      ></portals-ecommerce-payment-item>
+        <portals-ecommerce-payment
+          *ngFor="let card of user.creditCards"
+          [creditCard]="card"
+          [selectable]="false"
+        ></portals-ecommerce-payment>
         <ion-button expand="block" color="secondary" [routerLink]="['./payment']">
           New Payment Method
         </ion-button>

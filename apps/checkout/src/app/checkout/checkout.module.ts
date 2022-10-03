@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { UserDetailPageRoutingModule } from './user-detail-routing.module';
-import { UserDetailPage } from './user-detail.page';
+import { CheckoutPageRoutingModule } from './checkout-routing.module';
+import { CheckoutPage } from './checkout.page';
 import { SharedModule } from '@portals-ecommerce/shared';
 
 @NgModule({
@@ -11,9 +11,9 @@ import { SharedModule } from '@portals-ecommerce/shared';
     CommonModule,
     FormsModule,
     IonicModule,
+    CheckoutPageRoutingModule,
     SharedModule,
-    UserDetailPageRoutingModule,
   ],
-  declarations: [UserDetailPage],
+  declarations: [CheckoutPage],
 })
-export class UserDetailPageModule {}
+export class CheckoutPageModule {}

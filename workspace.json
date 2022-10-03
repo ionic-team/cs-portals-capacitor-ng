@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "account": "apps/account",
+    "checkout": "apps/checkout",
     "help": "apps/help",
     "shared": "libs/shared",
     "shell": "apps/shell"

@@ -8,7 +8,7 @@
     {{address.city}}, {{address.state}} {{address.postal}}
   </ion-label>
   <ion-chip *ngIf="address.preferred" color="success">Default</ion-chip>
-  <ion-button fill="clear" slot="end" [routerLink]="['./address', address.id]">
+  <ion-button fill="clear" slot="end" [routerLink]="['/user/address', address.id]">
     Edit
   </ion-button>
 </ion-item>

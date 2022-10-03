@@ -1,5 +1,5 @@
 {
-  "name": "@portals-ecommerce/help",
+  "name": "@portals-ecommerce/checkout",
   "devDependencies": {
     "@capacitor/cli": "^4.3.0"
   }
