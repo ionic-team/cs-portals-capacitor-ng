@@ -3,7 +3,7 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 module.exports = withModuleFederationPlugin({
   name: 'account',
   exposes: {
-    './Module': './apps/checkout/src/app/app.module.ts',
+    './Module': './apps/checkout/src/app/checkout/checkout.module.ts',
   },
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),

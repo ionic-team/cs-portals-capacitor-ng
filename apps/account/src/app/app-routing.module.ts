@@ -8,6 +8,7 @@ const routes: Routes = [
       import('./user-detail/user-detail.module').then(
         (m) => m.UserDetailPageModule
       ),
+    pathMatch: 'full',
   },
   {
     path: 'address',
