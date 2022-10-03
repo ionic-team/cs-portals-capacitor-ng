@@ -30,6 +30,6 @@ export class ItemDetailPage implements OnInit {
 
   addToCart(product: Product) {
     this.cart.addToBasket(product.id, product.price);
-    this.nav.back();
+    this.nav.navigateBack('/shop');
   }
 }
