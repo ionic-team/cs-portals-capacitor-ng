@@ -8,7 +8,7 @@ import { CreditCard } from '../models';
 })
 export class PaymentComponent {
   @Input() creditCard!: CreditCard;
-  @Input() selectable = false;
+  @Input() selectable = true;
   @Input() selectedId?: number;
 
   @Output() selectPayment = new EventEmitter<CreditCard>();

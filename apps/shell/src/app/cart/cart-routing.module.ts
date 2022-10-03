@@ -8,6 +8,11 @@ const routes: Routes = [
     path: '',
     component: CartPage,
   },
+  {
+    path: 'checkout',
+    loadChildren: () =>
+      import('checkout/Module').then((m) => m.CheckoutPageModule),
+  },
 ];
 
 @NgModule({

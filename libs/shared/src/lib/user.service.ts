@@ -23,6 +23,14 @@ export class UserService {
     return this.user.getValue().creditCards.find((c) => c.id === id);
   }
 
+  getPreferredAddress(): Address | undefined {
+    return this.user.getValue().addresses.find((a) => a.preferred);
+  }
+
+  getPreferredPaymentMethod(): CreditCard | undefined {
+    return this.user.getValue().creditCards.find((c) => c.preferred);
+  }
+
   saveAddress(address: Address) {
     const addresses = this.user.getValue().addresses;
     let idx = addresses.findIndex((a) => a.id === address.id);

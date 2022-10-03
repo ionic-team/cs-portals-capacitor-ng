@@ -151,12 +151,7 @@
   },
   "cart": {
     "id": -1,
-    "subTotal": 64.0,
-    "basket": [
-      {
-        "productId": 1,
-        "quantity": 2
-      }
-    ]
+    "subTotal": 0.0,
+    "basket": []
   }
 }

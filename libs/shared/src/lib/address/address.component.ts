@@ -9,7 +9,7 @@ import { User, Address } from '../models';
 export class AddressComponent {
   @Input() user!: User;
   @Input() address!: Address;
-  @Input() selectable = false;
+  @Input() selectable = true;
   @Input() selectedId?: number;
 
   @Output() selectAddress = new EventEmitter<Address>();

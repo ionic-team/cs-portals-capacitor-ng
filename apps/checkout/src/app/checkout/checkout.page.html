@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cancel" defaultHref="/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div *ngIf="user$ | async as user">
+    <ion-list lines="none">
+      <ion-list-header>Delivery</ion-list-header>
+      <portals-ecommerce-address 
+        *ngFor="let address of user.addresses" 
+        [user]="user" 
+        [address]="address"
+        [selectedId]="selectedAddressId"
+        (selectAddress)="onAddressSelected($event)"
+      ></portals-ecommerce-address>
+    </ion-list>
+    <ion-list lines="none">
+      <ion-list-header>Payment</ion-list-header>
+      <portals-ecommerce-payment 
+        *ngFor="let card of user.creditCards" 
+        [creditCard]="card"
+        [selectedId]="selectedPaymentId"
+        (selectPayment)="onPaymentSelected($event)"
+      ></portals-ecommerce-payment>
+    </ion-list>
+  </div>
+  <div *ngIf="cart$ | async as cart">
+    <ion-list lines="none">
+      <ion-list-header>Review Total</ion-list-header>
+      <ion-item>
+        <ion-label>{{cart.subTotal | currency}} + Tax</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button class="ion-margin-top" expand="block" (click)="order()">Place Your Order</ion-button>
+  </div>
+</ion-content>

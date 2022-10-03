@@ -35,7 +35,8 @@
             <td><strong>{{cart.subTotal | currency}} + Tax</strong></td>
           </tr>
         </table>
-        <ion-button expand="block">Checkout</ion-button>
+        <ion-button expand="block" [routerLink]="['./checkout']">Checkout</ion-button>
+
       </div>
     </div>
     <ng-template #basketEmpty>
