@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Address, User } from '@portals-ecommerce/shared';
+import { User, Address } from '../models';
 
 @Component({
-  selector: 'portals-ecommerce-address-item',
-  templateUrl: './address-item.component.html',
-  styleUrls: ['./address-item.component.scss'],
+  selector: 'portals-ecommerce-address',
+  templateUrl: './address.component.html',
+  styleUrls: ['./address.component.scss'],
 })
-export class AddressItemComponent {
+export class AddressComponent {
   @Input() user!: User;
   @Input() address!: Address;
   @Input() selectable = false;

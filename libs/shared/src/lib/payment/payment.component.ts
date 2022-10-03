@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CreditCard } from '@portals-ecommerce/shared';
+import { CreditCard } from '../models';
 
 @Component({
-  selector: 'portals-ecommerce-payment-item',
-  templateUrl: './payment-item.component.html',
-  styleUrls: ['./payment-item.component.scss'],
+  selector: 'portals-ecommerce-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.scss'],
 })
-export class PaymentItemComponent {
+export class PaymentComponent {
   @Input() creditCard!: CreditCard;
   @Input() selectable = false;
   @Input() selectedId?: number;
