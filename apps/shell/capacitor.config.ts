@@ -23,6 +23,11 @@ const config: CapacitorConfig = {
         {
           name: 'help',
           webDir: '../../dist/apps/help',
+          liveUpdateConfig: {
+            appId: "44897b9b",
+            channel: "production",
+            autoUpdateMethod: "background"
+          }
         },
       ],
     },
