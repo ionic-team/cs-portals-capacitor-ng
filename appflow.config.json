@@ -4,8 +4,8 @@
         {
             "appId": "44897b9b",
             "root": "apps/help",
-            "dependencyInstallCommand": "npm install && cd ../../ && npm install",
-            "webBuildCommand": "cd ../.. && npm run build"
+            "dependencyInstallCommand": "cd ../.. && npm install",
+            "webBuildCommand": "cd ../.. && npx nx run help:build"
         }
     ]
 }
