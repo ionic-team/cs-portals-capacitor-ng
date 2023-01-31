@@ -61,7 +61,7 @@
     "@angular/router": "~14.2.0",
     "@capacitor/camera": "~4.1.1",
     "@capacitor/core": "^4.3.0",
-    "@ionic-enterprise/capacitor-portals": "~0.0.2",
+    "@ionic-enterprise/capacitor-portals": "~0.0.5",
     "@ionic/angular": "^6.1.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
