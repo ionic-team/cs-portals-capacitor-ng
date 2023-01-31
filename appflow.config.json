@@ -1,0 +1,11 @@
+{
+    "apps":
+    [
+        {
+            "appId": "44897b9b",
+            "root": "apps/help",
+            "dependencyInstallCommand": "cd ../.. && npm install",
+            "webBuildCommand": "cd ../.. && npx nx run help:build"
+        }
+    ]
+}
