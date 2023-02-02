@@ -7,6 +7,7 @@ const config: CapacitorConfig = {
   bundledWebRuntime: false,
   plugins: {
     Portals: {
+      liveUpdatesKey: "ionic_cloud_public.pem",
       shell: {
         name: 'shell',
         webDir: '../../dist/apps/shell',
