@@ -10,6 +10,9 @@
       <ion-title size="large">Shop</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-button expand="full" [routerLink]="['/user/address/example']">
+    Go to nested route
+  </ion-button>
   <h2 class="ion-padding">Must Haves, Bestsellers & More</h2>
   <portals-ecommerce-featured-products [products]="featuredProducts"></portals-ecommerce-featured-products>
   

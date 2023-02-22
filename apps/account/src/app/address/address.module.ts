@@ -7,9 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { AddressPageRoutingModule } from './address-routing.module';
 
 import { AddressPage } from './address.page';
+import { ExamplePage } from './example/example.page';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, AddressPageRoutingModule],
-  declarations: [AddressPage],
+  declarations: [AddressPage, ExamplePage],
 })
 export class AddressPageModule {}
