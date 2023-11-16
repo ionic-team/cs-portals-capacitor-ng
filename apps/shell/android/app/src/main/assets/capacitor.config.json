@@ -4,10 +4,9 @@
 	"webDir": "../../dist/apps/shell",
 	"bundledWebRuntime": false,
 	"plugins": {
-		"Portals": {
+		"FederatedCapacitor": {
 			"shell": {
-				"name": "shell",
-				"webDir": "../../dist/apps/shell"
+				"name": "shell"
 			},
 			"apps": [
 				{

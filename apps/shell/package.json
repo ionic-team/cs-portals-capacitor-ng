@@ -1,12 +1,12 @@
 {
   "name": "@portals-ecommerce/shell",
   "dependencies": {
-    "@ionic-enterprise/capacitor-portals": "~0.0.5",
-    "@capacitor/camera": "~4.1.1"
+    "@capacitor/camera": "^5.0.0",
+    "@ionic-enterprise/federated-capacitor": "^0.1.5"
   },
   "devDependencies": {
-    "@capacitor/cli": "^4.3.0",
-    "@capacitor/android": "^4.3.0",
-    "@capacitor/ios": "^4.3.0"
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/ios": "^5.0.0"
   }
 }
