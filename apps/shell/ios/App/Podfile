@@ -1,3 +1,5 @@
+require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
+
 require_relative '../../../../node_modules/@capacitor/ios/scripts/pods_helpers'
 
 platform :ios, '13.0'
@@ -9,10 +11,10 @@ use_frameworks!
 install! 'cocoapods', :disable_input_output_paths => true
 
 def capacitor_pods
-  pod 'Capacitor', :path => '../../../../node_modules/@capacitor/ios'
-  pod 'CapacitorCordova', :path => '../../../../node_modules/@capacitor/ios'
-  pod 'IonicEnterpriseCapacitorPortals', :path => '../../../../node_modules/@ionic-enterprise/capacitor-portals'
-  pod 'CapacitorCamera', :path => '../../../../node_modules/@capacitor/camera'
+  pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
+  pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
+  pod 'CapacitorCamera', :path => '../../node_modules/@capacitor/camera'
+  pod 'IonicEnterpriseFederatedCapacitor', :path => '../../node_modules/@ionic-enterprise/federated-capacitor'
 end
 
 target 'App' do

@@ -1,0 +1,41 @@
+PODS:
+  - Capacitor (5.5.1):
+    - CapacitorCordova
+  - CapacitorCamera (5.0.7):
+    - Capacitor
+  - CapacitorCordova (5.5.1)
+  - IonicEnterpriseFederatedCapacitor (0.1.5):
+    - Capacitor
+    - IonicLiveUpdates (~> 0.4.1)
+  - IonicLiveUpdates (0.4.1)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "IonicEnterpriseFederatedCapacitor (from `../../node_modules/@ionic-enterprise/federated-capacitor`)"
+
+SPEC REPOS:
+  trunk:
+    - IonicLiveUpdates
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorCamera:
+    :path: "../../node_modules/@capacitor/camera"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  IonicEnterpriseFederatedCapacitor:
+    :path: "../../node_modules/@ionic-enterprise/federated-capacitor"
+
+SPEC CHECKSUMS:
+  Capacitor: 9da0a2415e3b6098511f8b5ffdb578d91ee79f8f
+  CapacitorCamera: 084b0b228bba7d00587910337b1c89e93b1d32ab
+  CapacitorCordova: e128cc7688c070ca0bfa439898a5f609da8dbcfe
+  IonicEnterpriseFederatedCapacitor: 8d4376836b9638b954beab39254335702783730c
+  IonicLiveUpdates: 6fbb00e7cf563474253092bedd2d3abd9e846e6d
+
+PODFILE CHECKSUM: edb87f0035086d5f65c4f2d597cc8b5f3480e2cd
+
+COCOAPODS: 1.14.2
