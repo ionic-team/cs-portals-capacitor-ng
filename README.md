@@ -19,22 +19,22 @@ This demo can be served for the web. In order to do so, you must run all of the 
 
 ```bash
 # Serve all the apps in parallel:
-nx run-many --parallel --target=serve --all
+npm run run:all
 
 # Alternatively, you can run each app independently:
-nx run account:serve
-nx run checkout:serve
-nx run help:serve
-nx run shell:serve -o
+npm run account
+npm run checkout
+npm run help
+npm run shell
 ```
 
 Run the following steps to build the demo for iOS/Android:
 
 ```bash
-npx cross-env CAP_BUILD=true nx run-many --target=build --all
-nx run shell:sync
-nx run shell:open:ios
-# nx run shell:open:android
+npm run build:all
+npm run sync
+npm run ios
+npm run android
 ```
 
 ## Micro Frontend Configuration
